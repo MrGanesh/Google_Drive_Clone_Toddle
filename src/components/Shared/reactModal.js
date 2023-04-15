@@ -46,20 +46,22 @@ export const ReactModal = ({
           className="closeIcon"
         />
         <p className="title">{isEditItem ? "Edit Item" : "Create New"}</p>
-        <div className="itemTyeDiv">
-          <span
-            className={`${isFolder ? "activeBtn" : "inactiveBtn"}`}
-            onClick={() => setIsFolder(true)}
-          >
-            Folder
-          </span>
-          <span
-            className={`${!isFolder ? "activeBtn" : "inactiveBtn"}`}
-            onClick={() => setIsFolder(false)}
-          >
-            File
-          </span>
-        </div>
+        {!isEditItem && (
+          <div className="itemTyeDiv">
+            <span
+              className={`${isFolder ? "activeBtn" : "inactiveBtn"}`}
+              onClick={() => setIsFolder(true)}
+            >
+              Folder
+            </span>
+            <span
+              className={`${!isFolder ? "activeBtn" : "inactiveBtn"}`}
+              onClick={() => setIsFolder(false)}
+            >
+              File
+            </span>
+          </div>
+        )}
 
         <input
           type="text"
